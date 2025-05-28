@@ -7,7 +7,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Experience from './sections/Experience';
-// import Contact from './sections/Contact';
+import Contact from './sections/Contact';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <About />
       <Projects />
       <Experience />
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 }
