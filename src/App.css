@@ -21,8 +21,30 @@ html {
 }
 
 /* Disable page scroll when on Hero (no lock active). Navigation occurs via hero links only */
-body:not([data-lock]) {
+/* body:not([data-lock]) {
   overflow: hidden;
+} */
+/* ================= About overlay (scroll inside About only) ================= */
+body[data-lock="about"] {
+  overflow: hidden;
+}
+
+body[data-lock="about"] #about.section {
+  position: fixed;
+  inset: 68px 0 0 0;
+  /* below navbar */
+  min-height: calc(100vh - 68px);
+  overflow-y: auto;
+  z-index: 15;
+  background: transparent;
+  padding: 16px 0 60px;
+}
+
+body[data-lock="about"] .hero,
+body[data-lock="about"] .section:not(#about) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 body {
@@ -283,13 +305,18 @@ body {
 
 /* ================= About ================= */
 /* About: start panel near the top (under navbar) */
-#about.section {
+/* #about.section {
   min-height: 100vh;
   display: grid;
   align-items: flex-start;
-  /* pin content to the top */
   padding: 24px 0 60px;
-  /* was 60px 0; reduces the top gap */
+} */
+#about.section {
+  min-height: auto;
+  /* IMPORTANT */
+  display: block;
+  /* remove grid constraint */
+  padding: 24px 0 60px;
 }
 
 #about .container {
