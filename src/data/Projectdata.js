@@ -1,6 +1,40 @@
 // src/data/Projectdata.js
 export const projects = [
     {
+        id: 'reality-game-show',
+        title: 'AI-Driven Reality Game Show Platform',
+        desc:
+            'Built a real time, multi round game show platform enhanced with AI powered question difficulty tuning, player performance analytics, and automated moderation, using WebSockets for low latency buzzer events and Spring Boot for authoritative game state orchestration across concurrent teams.',
+        tags: [
+            'Java',
+            'Spring Boot',
+            'WebSockets',
+            'AI Analytics',
+            'Game Theory',
+            'React',
+            'Docker'
+        ],
+        image: '/assets/realitygameshow.png',
+        codeUrl: 'https://github.com/DHANUSH1323/RealityGameShow'
+    },
+    {
+        id: 'banking-microservices',
+        title: 'Banking Ledger & Transaction Microservices',
+        desc:
+            'Designed and built scalable Java Spring Boot microservices to handle banking transactions, ledger entries, and account balance management, with strong consistency guarantees, fault tolerance, and secure REST APIs aligned with real world financial systems.',
+        tags: [
+            'Java',
+            'Spring Boot',
+            'Microservices',
+            'REST APIs',
+            'PostgreSQL',
+            'Kafka',
+            'Docker'
+        ],
+        image: '/assets/banking.png',
+        codeUrl: 'https://github.com/DHANUSH1323/banking'
+    },
+    {
         id: 'delivery-mgmt',
         title: 'Agentic AI Job Application Tracker',
         desc:
