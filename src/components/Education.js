@@ -1,8 +1,84 @@
 import React, { useEffect } from "react";
-import useReveal from "../hooks/useReveal";
+
+const education = [
+    {
+        title: "M.S. Computer Science",
+        grade: "GPA: 3.75/4.0",
+        period: "Aug 2023 – Dec 2024",
+        school: "University at Buffalo, The State University of New York (SUNY)",
+        note: "Coursework: Algorithms, Data Intensive Applications, Data Management Systems, Machine Learning, Computer Vision",
+    },
+    {
+        title: "B.E. Computer Science and Engineering",
+        grade: "GPA: 3.6/4.0",
+        period: "Jun 2016 – Sept 2020",
+        school: "R.M.D Engineering College (Anna University), Chennai, India",
+        note: "Coursework: Operating Systems, Networks, Object Oriented Programming, Computer Architecture, Data Structures",
+    },
+];
+
+const certifications = [
+    "AWS Cloud Practitioner",
+    "Azure Developer Associate",
+    "Node.js",
+    "Develop AI Agents on Azure (Microsoft)",
+];
+
+const experience = [
+    {
+        title: "AI Agentic Engineer – Acarin Inc",
+        period: "Feb 2026 – Present",
+        place: "Columbia, MD",
+        bullets: [
+            "Designed the multi-agent invoice-processing worker for an enterprise HR and finance AI platform, and wrote its orchestrator routing rules, tool list, and human-in-the-loop approval steps in Python.",
+            "Built the eval harness in Python that replays golden datasets from Langfuse traces with an LLM as the user, scores 10 runs per case with an LLM-as-a-judge and code-based graders, and feeds a regression suite.",
+            "Added input and output guardrails: an LLM judge catches jailbreak and prompt-injection attempts, and output checks stop internal IDs and reasoning traces leaking, tracked by false-positive and false-negative rate.",
+            "Prototyped long-term agent memory in PostgreSQL, with per-user and per-entity stores that save stated preferences and load them back in later sessions.",
+            "Developed the backend services for the worker in FastAPI with MCP tool servers, using Kafka for asynchronous response delivery and PostgreSQL for agent state, and reduced the MCP tool list exposed to the agent from 78 to 34 (56%), cutting wrong-tool selection.",
+            "Wrote the personally identifiable information (PII) masking service in Python that replaces detected identities with opaque tokens before any text goes to a third-party model.",
+        ],
+    },
+    {
+        title: "Software Engineer – Redprint",
+        period: "Jan 2025 – Feb 2026",
+        place: "Buffalo, NY",
+        bullets: [
+            "Built Node.js REST APIs serving real-time web and mobile applications, handling authentication, request validation, error handling, and asynchronous data flows.",
+            "Implemented data caching and profiled backend performance to cut API response times, keeping live updates and notifications responsive under high-frequency traffic.",
+            "Split backend services for independent release and automated deployment through GitHub Actions CI/CD, cutting release time by 90%, and integrated third-party analytics, notification, and monitoring services.",
+        ],
+    },
+    {
+        title: "Junior Software Engineer – Tata Consultancy Services",
+        period: "Dec 2021 – Jul 2023",
+        place: "Chennai, India",
+        bullets: [
+            "Built Java Spring Boot microservices for ALDI’s enterprise system, exposing RESTful APIs and integrating PostgreSQL and Kafka to improve end-to-end data processing efficiency by 32%.",
+            "Developed automated unit and integration tests with JUnit and Mockito, reducing regression issues by 40% and improving release stability in distributed, multi-tier environments.",
+            "Troubleshot production issues and tuned SQL queries in an Agile Scrum team, cutting average incident resolution time by 28%.",
+        ],
+    },
+    {
+        title: "Performance Test Engineer – Cognizant",
+        period: "Oct 2020 – Aug 2021",
+        place: "Chennai, India",
+        bullets: [
+            "Analyzed distributed system performance across PostgreSQL, Kafka messaging, and Spring Boot backend services, surfacing scalability issues that improved API response times by 25% at peak load.",
+            "Built performance and validation tools in Java to assess Spring Boot microservices and REST APIs.",
+            "Produced performance reports and test documentation with developers, QA, and business stakeholders in Agile delivery cycles, reducing failed release cycles by 30%.",
+        ],
+    },
+    {
+        title: "Programmer Analyst Intern – Cognizant",
+        period: "Jan 2020 – May 2020",
+        place: "Chennai, India",
+        bullets: [
+            "Built RESTful APIs with Java and Spring Boot, working with cross-functional teams on debugging and code reviews.",
+        ],
+    },
+];
 
 export default function Education() {
-    // useReveal?.();
     useEffect(() => {
         const applyLock = () => {
             if (window.location.hash === "#education") {
@@ -30,121 +106,66 @@ export default function Education() {
                 <div className="edu-panel reveal">
                     <header className="edu-head">
                         <span className="edu-eyebrow">Education</span>
-                        <h2 id="education-title" className="edu-title">My Education</h2>
+                        <h2 id="education-title" className="edu-title">Education &amp; Experience</h2>
                     </header>
 
                     <div className="edu-grid">
-                        {/* Left column — Education */}
+                        {/* Left column — Education + Certifications */}
                         <div className="edu-col">
                             <h3 className="edu-col__title">Education</h3>
                             <ol className="edu-tl" aria-label="Education timeline">
-                                <li className="edu-item">
-                                    <span className="edu-tl__dot" />
-                                    <div className="edu-item__body">
-                                        <div className="edu-item__row">
-                                            <h4 className="edu-item__title">Masters in Computer Science and Engineering</h4>
-                                            <span className="pill">CGPA: 3.75</span>
+                                {education.map((e) => (
+                                    <li className="edu-item" key={e.title}>
+                                        <span className="edu-tl__dot" />
+                                        <div className="edu-item__body">
+                                            <div className="edu-item__row">
+                                                <h4 className="edu-item__title">{e.title}</h4>
+                                                <span className="pill">{e.grade}</span>
+                                            </div>
+                                            <div className="edu-item__period">{e.period}</div>
+                                            <div className="edu-item__school">{e.school}</div>
+                                            <ul className="edu-bullets">
+                                                <li>{e.note}</li>
+                                            </ul>
                                         </div>
-                                        <div className="edu-item__period">2023 – 2024</div>
-                                        <div className="edu-item__school">University at Buffalo – SUNY</div>
-                                    </div>
-                                </li>
+                                    </li>
+                                ))}
+                            </ol>
 
-                                <li className="edu-item">
-                                    <span className="edu-tl__dot" />
-                                    <div className="edu-item__body">
-                                        <div className="edu-item__row">
-                                            <h4 className="edu-item__title">Bachelors in Computer Science</h4>
-                                            <span className="pill">GPA: 8.11/10</span>
+                            <h3 className="edu-col__title">Certifications</h3>
+                            <ol className="edu-tl" aria-label="Certifications">
+                                {certifications.map((c) => (
+                                    <li className="edu-item" key={c}>
+                                        <span className="edu-tl__dot" />
+                                        <div className="edu-item__body">
+                                            <h4 className="edu-item__title">{c}</h4>
                                         </div>
-                                        <div className="edu-item__period">2016 – 2020</div>
-                                        <div className="edu-item__school">R.M.D Engineering College (Anna University)</div>
-                                    </div>
-                                </li>
+                                    </li>
+                                ))}
                             </ol>
                         </div>
 
-                        {/* Right column — Experience (optional; matches your screenshot) */}
                         {/* Right column — Experience */}
                         <div className="edu-col">
                             <h3 className="edu-col__title">Experience</h3>
                             <ol className="edu-tl" aria-label="Experience timeline">
-                                <li className="edu-item">
-                                    <span className="edu-tl__dot" />
-                                    <div className="edu-item__body">
-                                        <div className="edu-item__row">
-                                            <h4 className="edu-item__title">Lead Software Engineer</h4>
-                                            <span className="pill">August 2024 – Present</span>
+                                {experience.map((x) => (
+                                    <li className="edu-item" key={x.title}>
+                                        <span className="edu-tl__dot" />
+                                        <div className="edu-item__body">
+                                            <div className="edu-item__row">
+                                                <h4 className="edu-item__title">{x.title}</h4>
+                                                <span className="pill">{x.period}</span>
+                                            </div>
+                                            <div className="edu-item__school">{x.place}</div>
+                                            <ul className="edu-bullets">
+                                                {x.bullets.map((b) => (
+                                                    <li key={b}>{b}</li>
+                                                ))}
+                                            </ul>
                                         </div>
-                                        <div className="edu-item__school">Redprint Inc</div>
-                                        <ul className="edu-bullets">
-                                            <li>Created, executed, and launched microservices that drive NFC-capable gym equipment monitoring, instant workout tracking, and tailored fitness suggestions serving over 100K active users across frontends in React Native, Swift, and React (TypeScript, JavaScript).</li>
-                                            <li>Created backend solutions using Node.js, Express, PostgreSQL, SQL Server, and MongoDB, implementing containerized applications on AWS Lambda and Google Cloud Functions, linked with AWS S3 for secure file storage and Firebase Auth for user authentication.</li>
-                                            <li>Designed event-driven microservice interactions with message queues and Firebase Cloud Functions for high-volume workout updates, enhancing data synchronization reliability by 25% in peak periods.</li>
-                                            <li>Developed scalable API agreements and modular data structures facilitating dynamic workout logic and analytics with sub-200ms response times across different platforms.</li>
-                                            <li>Directed CI/CD automation through GitHub Actions and Xcode Cloud, reducing deployment cycles by 40%, incorporating regression test coverage, and facilitating zero-downtime releases.</li>
-                                            <li>Worked collaboratively with QA, design, and product groups to deliver features every two weeks, achieving over 95% crash-free sessions and notable enhancements in user experience.</li>
-                                            <li>Promoted best practices for observability and debugging by implementing distributed tracing, structured logging, and real-time analytics to track system performance and user interactions after release.</li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                {/* NEW #1 */}
-                                <li className="edu-item">
-                                    <span className="edu-tl__dot" />
-                                    <div className="edu-item__body">
-                                        <div className="edu-item__row">
-                                            <h4 className="edu-item__title">Software Engineer – Tata Consultancy Services</h4>
-                                            <span className="pill">Dec 2021 – Jul 2023</span>
-                                        </div>
-                                        <div className="edu-item__school">Chennai, India</div>
-                                        <ul className="edu-bullets">
-                                            <li>Created and built modular enterprise-level tools utilizing Java (Spring Boot), .NET Core (C#), Angular, and SQL Server, enhancing operational efficiency by 30% within finance and supply chain teams for ALDI's ERP modernization projects.</li>
-                                            <li>Developed microservices and RESTful APIs with Spring Boot and ASP.NET Web API, incorporating token-based authentication (JWT/OAuth2), domain-driven design, and layered architecture to facilitate cross-platform ERP operations.</li>
-                                            <li>Upgraded outdated monoliths by transitioning services to Java 17 and .NET 6 with asynchronous I/O and non-blocking streams, achieving a more than 40% reduction in API response times and facilitating scalable, cloud-native implementations on AWS ECS and Azure App Services.</li>
-                                            <li>Implemented strong testing frameworks such as JUnit, Mockito, xUnit, and Moq, ensuring over 85% coverage and enhancing release assurance in CI/CD pipelines.</li>
-                                            <li>Enhanced database efficiency by developing intricate stored procedures and SQL indexing methods, cutting reporting query expenses by 50% for large customer and order datasets.</li>
-                                            <li>Implemented functionalities in Agile sprints with Azure DevOps and Jira, engaging in code reviews, release strategy sessions, and stakeholder demonstrations for significant modules within Java and C# frameworks.</li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li className="edu-item">
-                                    <span className="edu-tl__dot" />
-                                    <div className="edu-item__body">
-                                        <div className="edu-item__row">
-                                            <h4 className="edu-item__title">Performace Test Engineer – Cognizant Technology Solutions Solutions</h4>
-                                            <span className="pill">Oct 2020 – Aug 2021</span>
-                                        </div>
-                                        <div className="edu-item__school">Chennai, India</div>
-                                        <ul className="edu-bullets">
-                                            <li>Conducted extensive performance and load testing for high-throughput hospital applications utilizing JMeter, LoadRunner, and tailored Java-, C#-, and Python-based test harnesses featuring intricate SQL queries, guaranteeing system reliability during maximum patient data volumes.</li>
-                                            <li>Utilized AppDynamics and Dynatrace APM to oversee Java and .NET (C#) applications, pinpoint bottlenecks, and execute optimizations that lowered SLA violations by 35%.</li>
-                                            <li>Created automation scripts in Java, C#, and Python to emulate multi-threaded traffic, carry out log parsing, and automate performance testing workflows — decreasing manual testing effort by 30% and speeding up test cycles.</li>
-                                            <li>Collaborated with backend engineering teams to analyze and optimize Java Spring Boot APIs, ASP.NET Core APIs, and Python-based microservices, suggesting CPU/memory modifications that enhanced response times and resource efficiency.</li>
-                                            <li>Provided production performance baselines and benchmarking reports prior to significant releases, confirming scalability in AWS and Azure settings.</li>
-                                            <li>Created comprehensive test strategies, execution plans, and knowledge documents to improve the team’s QA performance processes, ensuring adherence to best practices within Java, .NET, and Python environments.</li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li className="edu-item">
-                                    <span className="edu-tl__dot" />
-                                    <div className="edu-item__body">
-                                        <div className="edu-item__row">
-                                            <h4 className="edu-item__title">Programmer Analyst Intern – Cognizant Technology Solutions Solutions</h4>
-                                            <span className="pill">Jan 2020 – May 2020</span>
-                                        </div>
-                                        <div className="edu-item__school">Chennai, India</div>
-                                        <ul className="edu-bullets">
-                                            <li>Gained a thorough understanding of Java programming, including both basic and advanced concepts such as multithreading and exception handling.</li>
-                                            <li>Acquired knowledge of JavaScript to improve the interactivity of web applications by using frameworks to create dynamic user interfaces.</li>
-                                            <li>Obtained practical experience using Spring Boot to develop enterprise-level apps, including developing RESTful APIs and putting security measures in place.</li>
-                                            <li>Worked on real-world projects with cross-functional teams, participating in brainstorming, debugging, and code reviews.</li>
-                                            <li>Participated in ongoing education through online courses, workshops, and independent study to broaden knowledge of Java technology and keep current with market developments.</li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-
+                                    </li>
+                                ))}
                             </ol>
                         </div>
                     </div>

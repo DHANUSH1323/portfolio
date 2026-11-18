@@ -4,10 +4,10 @@ export default function SocialBar() {
     return (
         <aside className="socialbar" aria-label="Social links">
             <a href="https://github.com/DHANUSH1323" target="_blank" rel="noopener noreferrer" className="soc" aria-label="GitHub"><GitHub /></a>
-            <a href="https://www.linkedin.com/in/dhanush-babu-a23426130/" target="_blank" rel="noopener noreferrer" className="soc" aria-label="LinkedIn"><LinkedIn /></a>
-            <a href="mailto:dhansuhramrt@gmail.com" className="soc" aria-label="Email"><Mail /></a>
+            <a href="https://www.linkedin.com/in/dhanushbaburamadoss/" target="_blank" rel="noopener noreferrer" className="soc" aria-label="LinkedIn"><LinkedIn /></a>
+            <a href="mailto:dhanushramrt@gmail.com" className="soc" aria-label="Email"><Mail /></a>
             {/* <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="soc" aria-label="Resume"><Doc /></a> */}
-            <a href="/resume.pdf" className="soc" aria-label="Resume" download="Dhanush_Babu_Resume.pdf" type="application/pdf"><Doc /></a>
+            <a href="/resume.pdf" className="soc" aria-label="Resume" download="Dhanush_Babu_Ramadoss_Resume.pdf" type="application/pdf"><Doc /></a>
         </aside>
     );
 }

@@ -1,6 +1,33 @@
 // src/data/Projectdata.js
 export const projects = [
     {
+        id: 'tool-count-study',
+        title: 'Research: Tool Count vs Tool Description in LLM Agents',
+        desc:
+            'Ran a pre-registered study (1,254 agent conversations, 11 conditions) and a 456-conversation follow-up on tau2-bench comparing fewer tools against better tool descriptions. Parameter facts in descriptions raised task success from 53% to 67% while longer rewrites added nothing, 48 distractor tools caused no reliable drop, and per-turn tool retrieval cut success to as low as 4%.',
+        tags: ['Python', 'tau2-bench', 'OpenAI API', 'Claude API', 'statsmodels'],
+        image: '/assets/toolstudy.svg',
+        codeUrl: 'https://github.com/DHANUSH1323/PhD'
+    },
+    {
+        id: 'deep-research-agent',
+        title: 'Multi-Agent Deep Research Assistant',
+        desc:
+            'Built an orchestrator that decomposes a research question and dispatches it to specialized subagents for retrieval and paper summarization, returning a cited report over a corpus of arXiv papers. Retrieval is exposed as MCP tools from a purpose-built MCP server, with hybrid dense + BM25 search and reciprocal-rank fusion over Qdrant, and contextual chunking on ingest.',
+        tags: ['Python', 'LangGraph', 'MCP', 'Qdrant', 'FastEmbed', 'Langfuse', 'PyMuPDF', 'Docker'],
+        image: '/assets/deepresearch.svg',
+        codeUrl: 'https://github.com/DHANUSH1323/deep-research-agent'
+    },
+    {
+        id: 'gaia-agent',
+        title: 'GAIA Benchmark Agent',
+        desc:
+            'Built a tool-using agent on smolagents and Qwen2.5-72B with custom tools for attachment parsing across text, Excel, and PDF, run across the full GAIA benchmark question set under a sandboxed import allowlist.',
+        tags: ['Python', 'smolagents', 'Qwen2.5-72B', 'DuckDuckGo Search', 'Gradio', 'pandas'],
+        image: '/assets/gaia.svg',
+        codeUrl: 'https://github.com/DHANUSH1323/Agents'
+    },
+    {
         id: 'reality-game-show',
         title: 'AI-Driven Reality Game Show Platform',
         desc:
@@ -35,7 +62,7 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/banking'
     },
     {
-        id: 'delivery-mgmt',
+        id: 'job-tracker',
         title: 'Agentic AI Job Application Tracker',
         desc:
             ' Created a self-governing AI tool that automates job application tracking with real-time email parsing and Google Sheets integration.',
@@ -44,7 +71,7 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/Job_tracker'
     },
     {
-        id: 'delivery-mgmt',
+        id: 'traffic-sign',
         title: 'Real Time Traffic Sign Detection',
         desc:
             'Developed a CNN-fusion (Vision Tranformer + CNN) system for real-time traffic sign detection and classification with high precision and recall.',
@@ -53,7 +80,7 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/Real-time-traffic-recognition-and-classification'
     },
     {
-        id: 'delivery-mgmt',
+        id: 'laptop-ai',
         title: 'Laptop AI Advisor App',
         desc:
             'Built an AI-powered web app using XGBoost and KNN to predict laptop prices with 87% accuracy and deliver brand-specific insights.',
@@ -62,7 +89,7 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/LaptopPricePredictor_server'
     },
     {
-        id: 'delivery-mgmt',
+        id: 'bookstore',
         title: 'Online Book Store Management System',
         desc:
             'Developed a full-stack React + Python/PostgreSQL platform with real-time search, optimized queries (50% faster), and scalable inventory management.',
@@ -71,7 +98,7 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/Online_Bookstore'
     },
     {
-        id: 'nyc-cab',
+        id: 'simple-rpg',
         title: 'Simple RPG Game',
         desc:
             'Built a text-based role-playing game in C# featuring character creation, combat mechanics, and inventory management.',
@@ -80,7 +107,7 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/SimpleRPG'
     },
     {
-        id: 'nyc-cab',
+        id: 'nmt',
         title: 'Neural Machine Translation (NMT) Model using NLP',
         desc:
             'Implemented an English-to-Spanish translation system using LSTMs with attention in TensorFlow/Keras, covering preprocessing, training, and evaluation.',
@@ -89,13 +116,13 @@ export const projects = [
         codeUrl: 'https://github.com/DHANUSH1323/Neural-Machine-Translation-using-NLP'
     },
     {
-        id: 'nyc-cab',
-        title: 'Bill_buddy using Flutter',
+        id: 'bill-buddy',
+        title: 'Bill Buddy (Flutter)',
         desc:
             'Built a Splitwise-like expense-sharing app with group expense tracking and bill-splitting features.',
         tags: ['Flutter', 'Dart', 'Kotlin', 'MongoDB', 'Python'],
         image: '/assets/billbuddy.png',
-        codeUrl: 'git@github.com:DHANUSH1323/Bill_buddy.git'
+        codeUrl: 'https://github.com/DHANUSH1323/Bill_buddy'
     }
     // …add more
 ];

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import SocialBar from "./components/SocialBar";

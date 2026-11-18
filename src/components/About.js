@@ -19,28 +19,31 @@ export default function About() {
                             loading="lazy"
                             decoding="async"
                             src="assets/IMG_6034.png"
-                            alt="Portrait"
+                            alt="Dhanush Babu Ramadoss"
                         />
                     </figure>
 
                     <article className="about__card" aria-label="About summary">
-                        <p className="about__tagline">Software Developer · Full Stack Developer · AI Engineer · Computer Vision</p>
+                        <p className="about__tagline">AI Agentic Engineer · LLM Agents &amp; Evals · Backend Engineer</p>
                         <div className="about__rule" />
                         <p>
-                            I’m Dhanush — I am a performance-oriented Software Engineer with over 5 years of experience providing impactful, scalable solutions in full-stack development, cloud engineering, and optimizing performance. Proficient in contemporary technologies such as Python, React, React Native, Node.js, Java, C#, JavaScript, TypeScript, AWS, Google Cloud, SQL Server, PostgreSQL, and Firebase, I focus on designing systems that enhance performance, reliability, and user experience.
-
+                            I’m Dhanush, an AI Agentic Engineer with 5+ years of software engineering experience. I build LLM agents that run in production: multi-agent orchestration, MCP tool servers, evaluation harnesses, guardrails, and the backend services that hold it all together.
                         </p>
                         <p>
-                            I obtained an MS in Computer Science from the University at Buffalo, where I developed Machine Learning, Deep Learning, and Computer Vision models from the ground up, implementing them on actual datasets and reaching accuracy of up to 94% in predictive analytics endeavors.
+                            At Acarin Inc, I designed the multi-agent invoice-processing worker for an enterprise HR and finance AI platform, built its eval harness (golden datasets replayed from Langfuse traces, scored with LLM-as-a-judge and code-based graders), added jailbreak and prompt-injection guardrails, and wrote a PII masking service. I also cut the MCP tool list exposed to the agent from 78 to 34, which reduced wrong-tool selection.
                         </p>
                         <p>
-                            At Redprint Inc, I directed mobile and backend development across platforms that catered to over 1M active users, established microservices for instantaneous health monitoring, and decreased deployment cycles by 40% using CI/CD automation. In earlier positions at TCS (ALDI) and CTS (Truist Bank), I upgraded enterprise applications, decreased API response times by over 40%, and refined database queries to lower reporting expenses by 50%.
+                            That work led me to research. In a pre-registered study of 1,254 agent conversations on tau2-bench, plus a 456-conversation follow-up, I tested fewer tools against better tool descriptions. Adding parameter facts to descriptions raised task success from 53% to 67%, while per-turn tool retrieval cut it to as low as 4%.
                         </p>
                         <p>
-                            Enthusiastic about AI, ML, and new technologies, I excel in dynamic settings where creativity intersects with implementation, and I am dedicated to developing meaningful solutions that extend worldwide.
+                            Before AI, I built backend systems: Node.js APIs for real-time apps at Redprint, Spring Boot microservices with PostgreSQL and Kafka for ALDI at TCS, and distributed-system performance analysis at Cognizant. I hold an M.S. in Computer Science from the University at Buffalo (GPA 3.75/4.0).
                         </p>
                         <p>
-                            Actively pursuing full-time Software Engineering positions that allow me to utilize my software engineering skills and AI/ML background to achieve significant business outcomes.
+                            <strong>LLMs &amp; Agents:</strong> Claude, GPT and Gemini APIs, AWS Bedrock, LangChain, LangGraph, MCP, Langfuse<br />
+                            <strong>Languages:</strong> Python, TypeScript, JavaScript, Java, SQL<br />
+                            <strong>Frameworks:</strong> FastAPI, Node.js, React, Spring Boot<br />
+                            <strong>Data, Cloud &amp; Tools:</strong> PostgreSQL, Qdrant, Redis, Kafka, AWS, Azure, Docker, Kubernetes, GitHub Actions<br />
+                            <strong>Certifications:</strong> AWS Cloud Practitioner, Azure Developer Associate, Node.js, Develop AI Agents on Azure (Microsoft)
                         </p>
                     </article>
                 </div>

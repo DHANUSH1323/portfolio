@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BackgroundParticles from "./BackgroundParticles";
 
 export default function Hero() {
@@ -8,7 +8,7 @@ export default function Hero() {
             <div className="hero__inner">
                 <h1 className="hero__title">Dhanush Babu Ramadoss</h1>
                 <h2 className="hero__sub">
-                    I&apos;m a <Typewriter words={["Software Engineer", "Full Stack Engineer", "ML Engineer"]} />
+                    I&apos;m a <Typewriter words={["AI Agentic Engineer", "LLM Agents Researcher", "Software Engineer"]} />
                 </h2>
 
                 <nav className="hero__nav">

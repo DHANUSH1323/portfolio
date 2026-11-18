@@ -53,10 +53,6 @@ export default function BackgroundParticles() {
             pointerX = 0,
             pointerY = 0;
 
-        const desktop = !navigator.userAgent.match(
-            /(iPhone|iPod|iPad|Android|BlackBerry|BB10|mobi|tablet|opera mini|nexus 7)/i
-        );
-
         const particles = [];
 
         function styleCanvas() {

@@ -951,6 +951,7 @@ body[data-lock="education"] .section:not(#education) {
 .contact-email {
   color: #e6eef0;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .contact-email:hover {
